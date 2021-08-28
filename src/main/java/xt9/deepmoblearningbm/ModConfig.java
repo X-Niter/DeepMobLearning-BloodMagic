@@ -21,39 +21,42 @@ public class ModConfig {
         }
     }
 
+    @Config.Comment("Change Essence Multiplier Settings")
     @Config.Name("Essence Multiplier Settings")
     public static CatalystMultiplierSubCategory essenceMultiplierSubCat = new CatalystMultiplierSubCategory();
 
-    @Config.Name("Essence Base Amounts")
+    @Config.Comment("Change cost of essence.")
+    @Config.Name("Data Model Essence Costs")
     public static EssenceBaseAmountsSubCategory essenceAmountSubCat = new EssenceBaseAmountsSubCategory();
 
     @Config.Comment({
+        "Min: 1",
         "Max: 66,666,666",
         "Default: 128"
     })
-    @Config.Name("RF tick cost of the Digital Agonizer")
-    @Config.RangeInt(min = 1, max = 66666666)
+    @Config.Name("RF tick cost of the Digital Agonizer")//66666666
     public static int agonizerRFCost = 128;
     public static int getAgonizerRFCost() {
         return MathHelper.ensureRange(agonizerRFCost, 1, 66666666);
     }
 
     @Config.Comment({
-            "Max: Nine quintillion",
-            "Default: 100 Thousand"
+            "Min: 1",
+            "Max: 9,223,372,036,854,775,807",
+            "Default: 100,000"
     })
-    @Config.Name("Digital Agonizer RF Storage Size")
+    @Config.Name("Digital Agonizer RF Storage Size")//9223372036854775807L
     public static int agonizerRFStorage = 100000;
     public static int getagonizerRFStorage() {
         return (int) MathHelper.ensureRange(agonizerRFStorage, 1, Long.MAX_VALUE);
     }
 
     @Config.Comment({
-            "Max: Nine quintillion",
+            "Min: 1",
+            "Max: 9,223,372,036,854,775,807",
             "Default: 25,600"
     })
-    @Config.Name("Digital Agonizer Input RF a Tick")
-    @Config.RangeDouble(min = 1, max = Long.MAX_VALUE) //9223372036854775807L
+    @Config.Name("Digital Agonizer Input RF a Tick")//9223372036854775807L
     public static int agonizerRFInput = 25600;
     public static int getagonizerRFInput() {
         return (int) MathHelper.ensureRange(agonizerRFInput, 1, Long.MAX_VALUE);
