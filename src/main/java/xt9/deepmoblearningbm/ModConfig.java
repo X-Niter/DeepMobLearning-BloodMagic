@@ -31,40 +31,34 @@ public class ModConfig {
 
     @Config.Comment({
         "Min: 1",
-        "Max: 66,666,666",
-        "Default: 128"
+        "Max: 2,147,483,647"
     })
-    @Config.Name("RF tick cost of the Digital Agonizer")//66666666
+    @Config.Name("RF tick cost of the Digital Agonizer")//2147483647
     public static int agonizerRFCost = 128;
     public static int getAgonizerRFCost() {
-        return MathHelper.ensureRange(agonizerRFCost, 1, 66666666);
+        return MathHelper.ensureRange(agonizerRFCost, 1, 2147483647);
     }
 
     @Config.Comment({
             "Min: 1",
-            "Max: 9,223,372,036,854,775,807",
-            "Default: 100,000"
+            "Max: 2,147,483,647"
     })
-    @Config.Name("Digital Agonizer RF Storage Size")//9223372036854775807L
+    @Config.Name("Digital Agonizer RF Storage Size")//2147483647
     public static int agonizerRFStorage = 100000;
     public static int getagonizerRFStorage() {
-        return (int) MathHelper.ensureRange(agonizerRFStorage, 1, Long.MAX_VALUE);
+        return MathHelper.ensureRange(agonizerRFStorage, 1, 2147483647);
     }
 
     @Config.Comment({
             "Min: 1",
-            "Max: 9,223,372,036,854,775,807",
-            "Default: 25,600"
+            "Max: 2,147,483,647"
     })
-    @Config.Name("Digital Agonizer Input RF a Tick")//9223372036854775807L
+    @Config.Name("Digital Agonizer Input RF a Tick")//2147483647
     public static int agonizerRFInput = 25600;
     public static int getagonizerRFInput() {
-        return (int) MathHelper.ensureRange(agonizerRFInput, 1, Long.MAX_VALUE);
+        return MathHelper.ensureRange(agonizerRFInput, 1, 2147483647);
     }
 
-    @Config.Comment({
-        "Default: false"
-    })
     @Config.Name("Allow multiple agonizers linked with one Altar")
     public static boolean isMultipleAgonizersAllowed = false;
 
