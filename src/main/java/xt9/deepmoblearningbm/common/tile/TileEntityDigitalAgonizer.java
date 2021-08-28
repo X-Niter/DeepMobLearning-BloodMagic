@@ -46,7 +46,7 @@ public class TileEntityDigitalAgonizer extends TileEntity implements ITickable, 
 
     private BaseItemHandler dataModel = new DataModelHandler();
     private BaseItemHandler input = new CatalystInputHandler();
-    private DeepEnergyStorage energyCap = new DeepEnergyStorage(100000, 25600 , 0, 0);
+    private DeepEnergyStorage energyCap = new DeepEnergyStorage(ModConfig.getagonizerRFStorage(), ModConfig.getagonizerRFInput(), 0, 0);
     private int highlightingTicks = 0;
     private int catalystOperations = 0;
     private int catalystOperationsMax = 0;

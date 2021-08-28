@@ -28,14 +28,35 @@ public class ModConfig {
     public static EssenceBaseAmountsSubCategory essenceAmountSubCat = new EssenceBaseAmountsSubCategory();
 
     @Config.Comment({
-        "Max: 10,000",
+        "Max: 66,666,666",
         "Default: 128"
     })
     @Config.Name("RF tick cost of the Digital Agonizer")
-    @Config.RangeInt(min = 1, max = 10000)
+    @Config.RangeInt(min = 1, max = 66666666)
     public static int agonizerRFCost = 128;
     public static int getAgonizerRFCost() {
-        return MathHelper.ensureRange(agonizerRFCost, 1, 10000);
+        return MathHelper.ensureRange(agonizerRFCost, 1, 66666666);
+    }
+
+    @Config.Comment({
+            "Max: Nine quintillion",
+            "Default: 100 Thousand"
+    })
+    @Config.Name("Digital Agonizer RF Storage Size")
+    public static int agonizerRFStorage = 100000;
+    public static int getagonizerRFStorage() {
+        return (int) MathHelper.ensureRange(agonizerRFStorage, 1, Long.MAX_VALUE);
+    }
+
+    @Config.Comment({
+            "Max: Nine quintillion",
+            "Default: 25,600"
+    })
+    @Config.Name("Digital Agonizer Input RF a Tick")
+    @Config.RangeDouble(min = 1, max = Long.MAX_VALUE) //9223372036854775807L
+    public static int agonizerRFInput = 25600;
+    public static int getagonizerRFInput() {
+        return (int) MathHelper.ensureRange(agonizerRFInput, 1, Long.MAX_VALUE);
     }
 
     @Config.Comment({
@@ -47,30 +68,102 @@ public class ModConfig {
     public static class EssenceBaseAmountsSubCategory {
         @Config.Comment({"Default: 50"})
         @Config.Name("Tier 1 Data Model - Essence per operation")
-        @Config.RangeInt(min = 1, max = 2000)
+        @Config.RangeInt(min = 1, max = 10000)
         public int tierOneEssenceAmount = 50;
 
         @Config.Comment({"Default: 75"})
         @Config.Name("Tier 2 Data Model - Essence per operation")
-        @Config.RangeInt(min = 1, max = 2000)
+        @Config.RangeInt(min = 1, max = 20000)
         public int tierTwoEssenceAmount = 75;
 
         @Config.Comment({"Default: 150"})
         @Config.Name("Tier 3 Data Model - Essence per operation")
-        @Config.RangeInt(min = 1, max = 2000)
+        @Config.RangeInt(min = 1, max = 30000)
         public int tierThreeEssenceAmount = 150;
 
         @Config.Comment({"Default: 300"})
         @Config.Name("Tier 4 Data Model - Essence per operation")
-        @Config.RangeInt(min = 1, max = 2000)
+        @Config.RangeInt(min = 1, max = 40000)
         public int tierFourEssenceAmount = 300;
+
+        @Config.Comment({"Default: 400"})
+        @Config.Name("Tier 5 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 50000)
+        public int tierFiveEssenceAmount = 600;
+
+        @Config.Comment({"Default: 500"})
+        @Config.Name("Tier 6 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 60000)
+        public int tierSixEssenceAmount = 780;
+
+        @Config.Comment({"Default: 600"})
+        @Config.Name("Tier 7 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 70000)
+        public int tierSevenEssenceAmount = 890;
+
+        @Config.Comment({"Default: 700"})
+        @Config.Name("Tier 8 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 80000)
+        public int tierEightEssenceAmount = 1010;
+
+        @Config.Comment({"Default: 800"})
+        @Config.Name("Tier 9 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 90000)
+        public int tierNineEssenceAmount = 1210;
+
+        @Config.Comment({"Default: 900"})
+        @Config.Name("Tier 10 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 100000)
+        public int tierTenEssenceAmount = 1420;
+
+        @Config.Comment({"Default: 1,000"})
+        @Config.Name("Tier 11 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 200000)
+        public int tierElevenEssenceAmount = 1580;
+
+        @Config.Comment({"Default: 1,100"})
+        @Config.Name("Tier 12 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 300000)
+        public int tierTwelveEssenceAmount = 1750;
+
+        @Config.Comment({"Default: 1,200"})
+        @Config.Name("Tier 13 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 400000)
+        public int tierThirteenEssenceAmount = 1900;
+
+        @Config.Comment({"Default: 1,300"})
+        @Config.Name("Tier 14 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 500000)
+        public int tierFourteenEssenceAmount = 2150;
+
+        @Config.Comment({"Default: 1,400"})
+        @Config.Name("Tier 15 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 600000)
+        public int tierFifteenEssenceAmount = 2450;
+
+        @Config.Comment({"Default: 1,500"})
+        @Config.Name("Tier 16 Data Model - Essence per operation")
+        @Config.RangeInt(min = 1, max = 700000)
+        public int tierSixteenEssenceAmount = 3000;
 
         public int getTierEssenceAmount(int tier) {
             switch (tier) {
-                case 1: return MathHelper.ensureRange(tierOneEssenceAmount, 1, 2000);
-                case 2: return MathHelper.ensureRange(tierTwoEssenceAmount, 1, 2000);
-                case 3: return MathHelper.ensureRange(tierThreeEssenceAmount, 1, 2000);
-                case 4: return MathHelper.ensureRange(tierFourEssenceAmount, 1, 2000);
+                case 1: return MathHelper.ensureRange(tierOneEssenceAmount, 1, 10000);
+                case 2: return MathHelper.ensureRange(tierTwoEssenceAmount, 1, 20000);
+                case 3: return MathHelper.ensureRange(tierThreeEssenceAmount, 1, 30000);
+                case 4: return MathHelper.ensureRange(tierFourEssenceAmount, 1, 40000);
+                case 5: return MathHelper.ensureRange(tierFiveEssenceAmount, 1, 50000);
+                case 6: return MathHelper.ensureRange(tierSixEssenceAmount, 1, 60000);
+                case 7: return MathHelper.ensureRange(tierSevenEssenceAmount, 1, 70000);
+                case 8: return MathHelper.ensureRange(tierEightEssenceAmount, 1, 80000);
+                case 9: return MathHelper.ensureRange(tierNineEssenceAmount, 1, 90000);
+                case 10: return MathHelper.ensureRange(tierTenEssenceAmount, 1, 100000);
+                case 11: return MathHelper.ensureRange(tierElevenEssenceAmount, 1, 200000);
+                case 12: return MathHelper.ensureRange(tierTwelveEssenceAmount, 1, 300000);
+                case 13: return MathHelper.ensureRange(tierThirteenEssenceAmount, 1, 400000);
+                case 14: return MathHelper.ensureRange(tierFourteenEssenceAmount, 1, 500000);
+                case 15: return MathHelper.ensureRange(tierFifteenEssenceAmount, 1, 600000);
+                case 16: return MathHelper.ensureRange(tierSixteenEssenceAmount, 1, 700000);
                 default: return 1;
             }
         }
