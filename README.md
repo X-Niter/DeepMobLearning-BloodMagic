@@ -20,7 +20,7 @@
 BloodMagic addon for DMLE(DeepMobLearning Extended)
 
 This is an addon for DMLE to add integration with the BloodMagic mod.
-This is an extention of Xt9's DML mod to keep up with support and introduce some niffty and creative changes, and allow for more options, flexability, and creativity.
+This is an extention of Xt9's DeepMobLearning BloodMagic mod designed to work in conjustion with DMLE (DeepMobLearning Extended).
 
 
 This addon being updated to work with DMLE was requested by Youtuber [FerreiraAlex](https://www.youtube.com/channel/UCLnoV4BBPVsxVEPtY4_UhcA)
